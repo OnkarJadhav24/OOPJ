@@ -1,0 +1,181 @@
+Q1
+
+import java.util.*;
+
+class Q1{
+
+public static void main(String [] arrgs){
+
+Scanner scn = new Scanner (System.in);
+
+System.out.println("Enter numerical grade: ");
+int numerical_grade = scn.nextInt();
+
+if (numerical_grade >=90){
+System.out.println("A");
+}
+
+else if (numerical_grade >=80){
+System.out.println("B");
+} 
+
+else if (numerical_grade >=70){
+System.out.println("C");
+} 
+
+else if (numerical_grade >=60){
+System.out.println("D");
+} 
+
+else {
+System.out.println("F");
+}
+
+}
+
+}
+
+
+Q2
+
+import java.util.Scanner;
+
+class Q2 {
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+
+System.out.print("Enter a year: ");
+int year = scanner.nextInt();
+
+if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+System.out.println(year + " is a leap year");
+}
+else {           
+System.out.println(year + " is not a leap year"); 
+     
+}
+
+}
+
+}		
+
+
+Q3
+
+import java.util.Scanner;
+
+class Q2 {
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+
+System.out.print("Enter a year: ");
+int year = scanner.nextInt();
+
+if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+System.out.println(year + " is a leap year");
+}
+else {           
+System.out.println(year + " is not a leap year"); 
+     
+}
+
+}
+
+}		
+
+
+Q4
+
+import java.util.Scanner;
+
+class Q4 {
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+
+ System.out.print("Enter weekday number (1-7): ");
+        int weekdayNum = scanner.nextInt();
+        String weekdayName;
+        switch (weekdayNum) {
+            case 1:
+                weekdayName = "Monday";
+                break;
+            case 2:
+                weekdayName = "Tuesday";
+                break;
+            case 3:
+                weekdayName = "Wednesday";
+                break;
+            case 4:
+                weekdayName = "Thursday";
+                break;
+            case 5:
+                weekdayName = "Friday";
+                break;
+            case 6:
+                weekdayName = "Saturday";
+                break;
+            case 7:
+                weekdayName = "Sunday";
+                break;
+            default:
+                System.out.println("Invalid weekday number");
+                return;
+        }
+        System.out.println("Weekday: " + weekdayName);
+
+}
+
+}
+
+
+Q5
+
+import java.util.Scanner;
+
+class Q5 {
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+
+    System.out.print("Enter a character: ");
+        char ch = scanner.next().charAt(0);
+        if (Character.isLetter(ch)) {
+            ch = Character.toLowerCase(ch);
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                System.out.println("Vowel");
+            } else {
+                System.out.println("Consonant");
+            }
+        } else {
+            System.out.println("Invalid input");
+        }
+}
+
+}
+
+
+Q6
+
+import java.util.Scanner;
+
+class Q6 {
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter height in meters: ");
+        double height = scanner.nextDouble();
+        System.out.print("Enter weight in kilograms: ");
+        double weight = scanner.nextDouble();
+        double bmi = weight / (height * height);
+        if (bmi < 18.5) {
+            System.out.println("Underweight");
+        } else if (bmi < 25) {
+            System.out.println("Normal weight");
+        } else if (bmi < 30) {
+            System.out.println("Overweight");
+        } else {
+            System.out.println("Obesity");
+        }
+
+        scanner.close();
+    }
+}
