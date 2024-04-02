@@ -1,0 +1,93 @@
+Q1
+
+package com.cdac;
+
+public class Try_Catch {
+
+	public static void main(String[] args) {
+		try {
+			int num1 = 10;
+			int num2 = 0;
+			
+			// Division by Zero
+			int result = num1/num2;
+			
+			// This line will not be executed if an exception occurs above
+			System.out.println("Result :" +result);
+		}
+		catch (ArithmeticException e) {
+			// Catching the ArithmeticException
+            System.out.println("An arithmetic exception occurred: " + e.getMessage());
+		}
+
+	}
+
+}
+
+
+
+Q2
+
+package com.cdac;
+
+public class IntException {
+	
+	public static void check(int n)throws Exception {
+		if (n%2!=0) {     // here it will check its odd or even 
+			throw new Exception ("Odd number!");
+		}
+	}
+	public static void main(String []args) {
+		try {
+			check(7); // I have put hard core value
+			System.out.println("Its even"); 
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+	}
+}
+
+
+
+Q3
+
+package com.cdac;
+
+public class ArrayIndexOutOfBoundsExample {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5};
+
+        try {
+            // Accessing an array index beyond to check the array size 
+            int value = array[10];
+            System.out.println("Value at index 10: " + value);       // This line will not be executed
+        } catch (ArrayIndexOutOfBoundsException e) {
+            // Catching the ArrayIndexOutOfBoundsException
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+    }
+}
+
+
+
+Q4
+
+package com.cdac;
+
+public class ArithmeticExceptionExample {
+    public static void main(String[] args) {
+        try {
+            // Division by zero
+            int result = 10 / 0;     // This will throw an ArithmeticException
+            System.out.println("Result of division: " + result);      // This line will not be executed. it will execute when given no is divisible of 10
+        } catch (ArithmeticException e) {
+            // Catching ArithmeticException
+            System.out.println("ArithmeticException caught: " + e.getMessage());
+        } catch (Exception e) {
+            // Catching any other exceptions
+            System.out.println("Exception caught: " + e.getMessage());
+        }
+    }
+}
+

@@ -1,0 +1,79 @@
+Q1
+
+package com.cdac;
+
+public class ArithmeticWideningDT {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int a=45,b=54;
+		double d=a+b;
+		float f=a+b;
+		System.out.println("In Double : "+d);
+		System.out.println("In Float : "+f);
+
+	}
+
+}
+
+
+
+Q2
+
+package com.cdac;
+
+public class NarrowingID {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		double d=45.54;
+		int i=(int)d;
+		System.out.println(" double to Int  :"+i);
+	}
+
+}
+
+
+Q3
+
+package com.cdac;
+
+public class WideningAllDT {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int i=45;
+		float f=i;
+		double d = i;
+		boolean b = (i!=0);
+		String s=Integer.toString(i);
+		
+		System.out.println(" Int to float  :"+f);
+		System.out.println(" Int to double  :"+d);
+		System.out.println(" Int to boolean  :"+b);
+		System.out.println(" Int to String  :"+s);
+		
+		
+	}
+
+}
+
+
+Q4
+
+package com.cdac;
+
+public class WideningDI {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int i=45;
+		double d=i;
+		System.out.println("Int to double :"+d);
+	}
+
+}
