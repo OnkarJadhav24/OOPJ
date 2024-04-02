@@ -1,0 +1,260 @@
+Q1
+
+package com.cdac;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Q1_Date {
+
+	public static void main(String[] args) {
+		 System.out.println("To convert dates: ");
+	        SimpleDateFormat s=new SimpleDateFormat("dd/MM/yyyy");
+	        Date d = new Date();
+	        System.out.println("Formated: "+s.format(d));
+
+	        s=new SimpleDateFormat("MM/dd/yyyy");
+	        System.out.println("Formated: "+s.format(d));
+
+	        s=new SimpleDateFormat("yyyy/MM/dd");
+	        System.out.println("Formated: "+s.format(d));
+
+	        System.out.println("To convert times: ");
+	        s=new SimpleDateFormat("hh:mm:ss");
+	        System.out.println("Formated: "+s.format(d));
+
+	        s=new SimpleDateFormat("hh:mm:ss a");
+	        System.out.println("Formated: "+s.format(d));
+
+	        s=new SimpleDateFormat("hh:mm");
+	        System.out.println("Formated: "+s.format(d));
+
+	        System.out.println("To convert dates and times: ");
+	        s=new SimpleDateFormat("dd/mm/yyyy hh:mm:ss");
+	        System.out.println("Formated: "+s.format(d));
+
+	        s=new SimpleDateFormat("mm/dd/yyyy hh:mm:ss a");
+	        System.out.println("Formated: "+s.format(d));
+
+	        s=new SimpleDateFormat("yyyy/mm/dd hh:mm");
+	        System.out.println("Formated: "+s.format(d));
+	}
+
+}
+
+
+
+
+Q 2
+
+package com.cdac;
+
+import java.util.*;
+
+public class BMICalculator {
+	
+	double height;
+	double weight;
+	
+	public BMICalculator (double height, double weight) {
+		this.height = height;
+		this.weight = weight;
+	}
+	
+	public double grtheight() {
+		return height;
+	}
+    public void setheight(double height) {
+        this.height = height;
+    }
+	public double grtweight() {
+		return weight;
+	}
+    public void setweight(double weight) {
+        this.weight = weight;
+    }
+    public double calculateBMI() {
+        return weight / (height * height);
+    }
+	
+	public static void main(String[] args) {
+		final Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter height in meter: ");
+		double height = scanner.nextDouble();
+		System.out.println("Enter weight in kilograms: ");
+		double weight = scanner.nextDouble();
+		
+		BMICalculator calculator = new BMICalculator(height, weight);
+		System.out.println("BMI Calculator: " +calculator.calculateBMI());
+				
+		scanner.close();	
+	}
+	
+}
+
+
+Q 3
+
+package com.cdac;
+
+public class Book {
+	private String title;
+	private String author;
+	private String publisher;
+	private String isbn;
+	private int year;
+	private double price;
+	private int quantity;
+	
+	public Book(String title, String author, String publisher, String isbn, int year, double price, int quantity) {
+		this.title = title;
+		this.author = author;
+		this.publisher = publisher;
+		this.isbn = isbn;
+		this.year = year;
+		this.price = price;
+		this.quantity = quantity;
+	}
+	
+	public String getTitle() {
+		return title;
+	}
+	
+	public void setTitle(String title) {
+        this.title = title;
+    }
+	
+	public String getAuthor() {
+		return author;
+	}
+	
+	public void setAuthor(String author) {
+        this.author = author;
+    }
+	
+	public String getPublisher() {
+		return publisher;
+	}
+	
+	public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+	
+	public String getIsbn() {
+		return isbn;
+	}
+	
+	public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+	
+	public int getYear() {
+		return year;
+	}
+	
+	public void setYear(int year) {
+        this.year = year;
+    }
+	
+	public double getPrice() {
+		return price;
+	}
+	
+	public void setPrice(int price) {
+        this.price = price;
+    }
+	
+	public int getQuantity() {
+		return quantity;
+	}
+	
+	public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+	
+    // Business logic methods
+    public void increaseQuantity(int quantity) {
+        this.quantity += quantity;
+    }
+
+    public void decreaseQuantity(int quantity) {
+        if (this.quantity >= quantity) {
+            this.quantity -= quantity;
+        } else {
+            System.out.println("Insufficient quantity available.");
+        }
+    }
+
+    public double getInventoryValue() {
+        return price * quantity;
+    }
+	
+
+	public static void main(String[] args) {
+		// Creating a Book object
+        Book book = new Book("Java Programming", "John Doe", "ABC Publications", "123456789", 2022, 29.99, 50);
+
+        // Printing book details
+        System.out.println("Book Title: " + book.getTitle());
+        System.out.println("Author: " + book.getAuthor());
+        System.out.println("Publisher: " + book.getPublisher());
+        System.out.println("ISBN: " + book.getIsbn());
+        System.out.println("Year: " + book.getYear());
+        System.out.println("Price: $" + book.getPrice());
+        System.out.println("Quantity: " + book.getQuantity());
+
+        // Increase quantity by 10
+        book.increaseQuantity(10);
+        System.out.println("Quantity after increase: " + book.getQuantity());
+
+        // Decrease quantity by 5
+        book.decreaseQuantity(5);
+        System.out.println("Quantity after decrease: " + book.getQuantity());
+
+        // Calculate inventory value
+        System.out.println("Inventory Value: $" + book.getInventoryValue());
+	}
+
+}
+
+Q 4 
+
+package com.cdac;
+
+public class ElectricityBill {
+    private String customerName;
+    private double unitsConsumed;
+    private double billAmount;
+
+    public ElectricityBill(String customerName, double unitsConsumed) {
+        this.customerName = customerName;
+        this.unitsConsumed = unitsConsumed;
+    }
+
+    public void calculateBillAmount() {
+        if (unitsConsumed <= 100) {
+            billAmount = unitsConsumed * 5;
+        } else if (unitsConsumed <= 300) {
+            billAmount = 100 * 5 + (unitsConsumed - 100) * 7;
+        } else {
+            billAmount = 100 * 5 + 200 * 7 + (unitsConsumed - 300) * 10;
+        }
+    }
+
+    public void displayBill() {
+        System.out.println("Customer Name: " + customerName);
+        System.out.println("Units Consumed: " + unitsConsumed);
+        System.out.println("Bill Amount: Rs. " + billAmount);
+    }
+
+    public static void main(String[] args) {
+        // Create an object of ElectricityBill
+        ElectricityBill bill = new ElectricityBill("Onkar Jadhav", 150); // Example customer with 150 units consumed
+
+        // Calculate the bill amount
+        bill.calculateBillAmount();
+
+        // Display the bill details
+        bill.displayBill();
+    }
+}
